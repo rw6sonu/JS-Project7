@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart-Task & Habit Tracker</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="form" id="form">
+        <h2>Form Input</h2>
+        <p>Task Name</p>
+        <input type="text" id="taskName" placeholder="Enter Your Task Name">
+        <div id="message">Please Fill Your Task Name.. </div>
+        <p>Task Details</p>
+        <input type="text" id="taskDetail" placeholder="Descrption">
+        <div id="message">Please Fill The Detail Of Task.. </div>
+        <p>Category</p>
+        <select id="taskCategory" name="Tasks" class="select-field" required>
+            <option value="">Select Category</option>
+            <option value="Work">Office Work</option>
+            <option value="Health">Health</option>
+            <option value="Study">Study</option>
+            <option value="Personal">Personal</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Travel">Travel</option>
+            <option value="Finance">Finance</option>
+            <option value="Fitness">Fitness</option>
+            <option value="Household">Household</option>
+            <option value="Other">Other</option>
+
+
+        </select>
+        <div id="message">Please Select the Category.. </div>
+        <p>Due Date</p>
+        <input type="date" id="taskDate">
+        <div id="message">Please Select the Date .. </div>
+        <button id="addBtn">Add to Dashboard</button>
+    </div>
+
+
+    <div class="task-list" id="taskListSection">
+        <h2>Task List</h2>
+        <ul id="taskItems"></ul>
+    </div>
+
+
+    <div id="summary">
+        <h2>Dashboard</h2>
+        <div class="dashboard-circles">
+            <div><span class="circle-count circle-total">${total}</span></div>
+            <div><span class="circle-count circle-completed">${completed}</span></div>
+            <div><span class="circle-count circle-pending">${pending}</span></div>
+            <div><span class="circle-count circle-overdue">${overdue}</span></div>
+        </div>
+
+    </div>
+
+    <div id="filter" class="filter" style="display:none;">
+        <h2>Filter</h2>
+        <div class="filter-btn">
+            <button id="allBtn" onclick="renderTasks('all')">All</button>
+            <button id="CompletedBtn" onclick="renderTasks('completed')">Completed</button>
+            <button id="PendingBtn" onclick="renderTasks('pending')">Pending</button>
+            <button id="OverdueBtn" onclick="renderTasks('overdue')">Overdue</button>
+        </div>
+        <!-- yahan filter ke results show honge -->
+        <ul id="filterItems"></ul>
+    </div>
+
+
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
